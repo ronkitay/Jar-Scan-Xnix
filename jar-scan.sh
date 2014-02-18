@@ -17,7 +17,7 @@ foreach J ( `find $DIR -name "*.jar"` )
         set outputsize = `echo $res|wc -c`
         if ( $outputsize > 1 )  then
                 printf "\nMatch found in [$J]\n "
-                printf  "$res\n" | tr ';' '\n'
+                printf  "$res\n" | tr ';' '\n' | grep --color "$CLASS"
         endif
 end
 
